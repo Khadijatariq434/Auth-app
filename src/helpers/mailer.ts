@@ -90,7 +90,7 @@ const mailOptions = {
   from: "khadijatariq434@gmail.com",
   to: email,
   subject: emailType === "VERIFY" ? "Verify your email" : "Reset your Password",
-  html: `<p>Click <a href="${process.env.DOMAIN}/${emailType === 'VERIFY' ? 'verifyemail' : 'reset-password'}?token=${token}">here</a> to ${emailType === "VERIFY" ? "verify your email" : "reset your password"} or copy and paste the link below in your browser. <br> ${process.env.DOMAIN}/${emailType === 'VERIFY' ? 'verifyemail' : 'reset-password'}?token=${token}</p>`,
+  html: `<p>Click <a href="https://auth-app-seven-eta.vercel.app/${emailType === 'VERIFY' ? 'verifyemail' : 'reset-password'}?token=${token}">here</a> to ${emailType === "VERIFY" ? "verify your email" : "reset your password"} or copy and paste the link below in your browser. <br> https://auth-app-seven-eta.vercel.app/${emailType === 'VERIFY' ? 'verifyemail' : 'reset-password'}?token=${token}</p>`,
 };
     const mailResponse = await transport.sendMail(mailOptions);
     console.log("Verification email sent with token:", token.substring(0, 10) + "...");
